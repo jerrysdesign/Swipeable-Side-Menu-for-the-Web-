@@ -1,0 +1,43 @@
+@import "compass/reset";
+@import "compass/css3";
+
+$primary:   #31dfbc;
+$secondary: #1fb5a9;
+
+body, html {
+  height: 100%;
+  overflow: hidden;
+  font-family: helvetica;
+  font-weight: 100;
+}
+ 
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+ 
+#sidebar {
+  position: absolute;
+  background: $primary;
+  width: 240px;
+  height: 100%;
+  @include box-sizing (border-box);
+  ul {
+    li {
+      a {
+        padding: 15px 20px;
+        font-size: 16px;
+        font-weight: 100;
+        color: white;
+        text-decoration: none;
+        display: block;
+        border-bottom: 1px solid darken($primary, 10%);
+        @include transition (background 0.2s ease-in-out);
+      }
+      &:hover a {
+        background: $secondary;
+      }
+    }
+  }
+}
