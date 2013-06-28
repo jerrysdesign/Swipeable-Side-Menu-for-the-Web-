@@ -3,6 +3,7 @@
 
 $primary:   #31dfbc;
 $secondary: #1fb5a9;
+$tertiary:  #DF314D;
 
 body, html {
   height: 100%;
@@ -16,7 +17,7 @@ body, html {
   height: 100%;
   width: 100%;
 }
- 
+
 #sidebar {
   position: absolute;
   background: $primary;
@@ -37,6 +38,33 @@ body, html {
       }
       &:hover a {
         background: $secondary;
+      }
+    }
+  }
+}
+
+.main-content {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  @include box-sizing (border-box);
+  position: relative;
+  #sidebar-toggle {
+    background: $tertiary;
+    @include border-radius (3px);
+    display: block;
+    position: relative;
+    padding: 10px 7px;
+    float: left;
+    .bar {
+      display: block;
+      width: 18px;
+      margin-bottom: 3px;
+      height: 2px;
+      background-color: #fff;
+      border-radius: 1px;
+      &:last-child {
+        margin-bottom: 0;
       }
     }
   }
