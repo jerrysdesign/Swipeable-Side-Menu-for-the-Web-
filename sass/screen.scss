@@ -16,11 +16,18 @@ body, html {
   position: relative;
   height: 100%;
   width: 100%;
+  left: 0;
+  @include transition (left 0.4s ease-in-out);
+}
+
+.open-sidebar {
+    left: 240px;
 }
 
 #sidebar {
   position: absolute;
   background: $primary;
+  left: -240px;
   width: 240px;
   height: 100%;
   @include box-sizing (border-box);

@@ -4,6 +4,7 @@ html
     meta http-equiv="content-type" content="text/html; charset=UTF-8"
     title Swipeable Side Menu
     link rel="stylesheet" href="stylesheets/screen.css"
+    script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"
   body
     .container
       #sidebar
@@ -15,6 +16,13 @@ html
         a#sidebar-toggle href="#" data-toggle=".container"
           -3.times do
             span.bar
-
+    
+    javascript:
+      $(document).ready(function() {
+        $("[data-toggle]").click(function() {
+          var toggle_el = $(this).data("toggle");
+          $(toggle_el).toggleClass("open-sidebar");
+        });
+      });
            
  
