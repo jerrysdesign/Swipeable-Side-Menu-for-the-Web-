@@ -5,6 +5,7 @@ html
     title Swipeable Side Menu
     link rel="stylesheet" href="stylesheets/screen.css"
     script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"
+    script src="http://cdn.strategiqcommerce.com/ajax/libs/jquery.touchswipe/1.5.1/jquery.touchswipe.min.js"
   body
     .container
       #sidebar
@@ -13,16 +14,27 @@ html
             li
               a href="#" Menu
       .main-content
+        .swipe-area
         a#sidebar-toggle href="#" data-toggle=".container"
           -3.times do
             span.bar
     
     javascript:
-      $(document).ready(function() {
+      $(function(){
         $("[data-toggle]").click(function() {
           var toggle_el = $(this).data("toggle");
           $(toggle_el).toggleClass("open-sidebar");
         });
+        $(".swipe-area").swipe({
+          swipeStatus:function(event, phase, direction, distance, duration, fingers){
+            if (phase=="move" && direction =="right") {
+              $(".container").addClass("open-sidebar");
+              return false;
+            }
+            if (phase=="move" && direction =="left") {
+              $(".container").removeClass("open-sidebar");
+              return false;
+            }
+          }
+        });
       });
-           
- 

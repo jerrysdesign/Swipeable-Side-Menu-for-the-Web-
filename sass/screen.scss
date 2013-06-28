@@ -21,9 +21,18 @@ body, html {
 }
 
 .open-sidebar {
-    left: 240px;
+  left: 240px;
 }
 
+.swipe-area {
+  position: absolute;
+  width: 50px;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: #f3f3f3;
+  z-index: 0;
+}
 #sidebar {
   position: absolute;
   background: $primary;
